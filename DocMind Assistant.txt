@@ -1,0 +1,34 @@
+"DocMind Assistant" — a bilingual (Persian/English) document
+question-answering system using a RAG pipeline.
+
+Project structure:
+docmind-assistant/
+├── app/
+│   ├── ui.py           → Streamlit interface
+│   ├── config.py       → App-wide settings and constants
+│   └── components.py   → Reusable UI components
+│
+├── core/
+│   ├── loader.py       → PDF loading with PyMuPDF
+│   ├── chunker.py      → Text chunking strategies
+│   ├── embeddings.py   → Embedding generation (Sentence Transformers / API)
+│   ├── vector_store.py → FAISS or Chroma vector store management
+│   ├── retriever.py    → Semantic retrieval logic
+│   ├── qa_chain.py     → LLM-based QA chain (LangChain or LlamaIndex)
+│   └── utils.py        → Shared helpers and utilities
+│
+├── data/
+│   ├── raw/            → Uploaded PDFs
+│   └── processed/      → Chunked and embedded data
+│
+├── notebooks/
+│   └── experiments.ipynb
+│
+├── tests/
+│   ├── test_loader.py
+│   ├── test_chunker.py
+│   └── test_retriever.py
+│
+├── .env.example
+├── requirements.txt
+└── README.md
